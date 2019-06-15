@@ -9,7 +9,7 @@ const inventario = [
   { tipo: "silla", valor: 10 },
   { tipo: "sillon", valor: 1200 },
   { tipo: "maquina", valor: 77 }
-]
+];
 
 /*  //PRUEBAS CON EL filter
 let arrayMaquinas = inventario.filter(inventariado => inventariado.tipo == "maquina")
@@ -22,13 +22,5 @@ let arraySillon = inventario.filter(inventariado => inventariado.tipo == "sillon
 console.log(arraySillon)
 */
 
-let valorTotalMaquina1 = inventario.filter(maquinas => maquinas.tipo == "maquina").reduce(function(a, b) {
-    a.valor += b.valor;
-    return a;
-  })
-console.log(valorTotalMaquina1)
-
-console.log()
-
-let valorTotalMaquina2 = inventario.filter(maquinas => maquinas.tipo == "maquina").reduce((a,b)=>({tipo: a.tipo,valor: a.valor + b.valor}))
-console.log(valorTotalMaquina2)
+let valorTotalMaquina = inventario.filter(maquinas => maquinas.tipo == "maquina").reduce((a,b) => a + b.valor,0);
+console.log(`El valor total de las máquinas es: $${valorTotalMaquina}`);
