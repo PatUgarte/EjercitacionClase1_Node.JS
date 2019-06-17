@@ -1,0 +1,2 @@
+.find() Método de los array, parecido al .findIndex(), pero que devuelve el elmento y no su índice.
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/find
