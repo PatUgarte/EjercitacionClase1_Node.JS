@@ -1,5 +1,5 @@
 /*
-5.  La función detectarColision busca en un array de rectángulos y devuelve el primer 
+4.  La función detectarColision busca en un array de rectángulos y devuelve el primer 
     rectángulo en el que se encuentra el punto dado. Use la desestructuración y una 
     función de orden superior para hacer que este código sea más limpio. Es posible 
     que desee utilizar el método de array find, que toma una función como argumento y 
