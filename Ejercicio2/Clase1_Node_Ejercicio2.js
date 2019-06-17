@@ -1,4 +1,3 @@
-
 /*
 2.  El código para este ejercicio implementa una wrapper function para trabajar con arrays ordenados. 
     Su constructor toma una función de comparación que compara dos elementos y devuelve un número.
@@ -14,36 +13,20 @@
     Por ejemplo:
     [1, 2, 3].findIndex(x => x > 1) dará 1.
 */
-
-    //ES5
-    function ArrayOrdenado(comparar) {
-      this.comparar = comparar;
-      this.contenido = [];
+    //ES6 Class
+    class ArrayOrdenado {
+        constructor(comparar){
+            this.comparar = comparar;
+            this.contenido = [];
+            this.encontrarPos = elt => this.contenido.findIndex(a => this.comparar(elt,a) < 0);
+            this.insertar = elt => this.contenido.splice(this.encontrarPos(elt), 0, elt);
+        }
     }
     
-    /*//ES6
-    var ArrayOrdenado = comparar => {
-        this.comparar = comparar;
-        this.contenido = [];
-    }*/
-
-    ArrayOrdenado.prototype.encontrarPos = function(elt) {
-      for (var i = 0; i < this.contenido.length; i++) {
-        if (this.comparar(elt, this.contenido[i]) < 0) break;
-      }
-      return i;
-    }
-
-    ArrayOrdenado.prototype.insertar = function(elt) {
-      this.contenido.splice(this.encontrarPos(elt), 0, elt);
-    }
-    
-    //var ordenado = new ArrayOrdenado(function(a, b) { return a - b });    //ES5
-    var ordenado = new ArrayOrdenado((a, b) => a - b );     //ES6
+    var ordenado = new ArrayOrdenado((a, b) => a - b);
     ordenado.insertar(5);
     ordenado.insertar(1);
     ordenado.insertar(2);
     ordenado.insertar(4);
     ordenado.insertar(3);
     console.log("array:", ordenado.contenido);
-    
