@@ -8,16 +8,12 @@
 */
 
     function detectarColision(objetos, punto) {
-      for (let i = 0; i < objetos.length; i++) {
-        let objeto = objetos[i]
-        let {x , y , ancho , alto} = objeto;
-        let {x:xPunto , y:yPunto} = punto;
-        /* console.log(`x: ${x}\ny: ${y}\nancho: ${ancho}\nalto: ${alto}\n`)
-        console.log(`xPunto: ${xPunto}\nyPunto: ${yPunto}\n`) */
-        if (xPunto >= x && xPunto <= x + ancho && 
-            yPunto >= y && yPunto <= y + alto)
-          return objeto;
-      }
+        let {x:xPunto , y:yPunto} = punto;  //Destructuración del punto recibido
+        return objetos.find(objeto => {
+            let {x , y , ancho , alto} = objeto;    //Destructuración de los elementos de cada rectángulo dentro del objeto iterable
+            return xPunto >= x && xPunto <= x + ancho && yPunto >= y && yPunto <= y + alto
+        })
+        //return objetos.find(objeto => xPunto >= objeto.x && xPunto <= objeto.x + objeto.ancho && yPunto >= objeto.y && yPunto <= objeto.y + objeto.alto)  //Alternativa, sin destructuración del rectángulo, pero en una sola línea de arrow function.
     }
     
     const misObjetos = [
