@@ -1,0 +1,5 @@
+.splice() Método de los arrays para insertar/reemplazar elementos dentro del mismo.
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/splice
+
+.findIndex() Método de los array incorporado en ES6, parecido al .indexOf().
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/findIndex
